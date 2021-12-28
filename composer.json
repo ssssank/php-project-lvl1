@@ -1,12 +1,19 @@
 {
     "name": "hexlet/code",
+    "autoload": {
+        "files": [
+            "src/Cli.php"
+        ]
+    },
     "authors": [
         {
             "name": "Alexander",
             "email": "ale.litvinov@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.13"
+    },
     "bin": [
         "bin/brain-games"
     ],
