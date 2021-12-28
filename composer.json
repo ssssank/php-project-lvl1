@@ -6,5 +6,10 @@
             "email": "ale.litvinov@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "bin": [
+        "bin/brain-games"
+    ],
+    "description": "Hexlet Project lvl1: Brain Games",
+    "license": "MIT"
 }
