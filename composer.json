@@ -18,5 +18,8 @@
         "bin/brain-games"
     ],
     "description": "Hexlet Project lvl1: Brain Games",
-    "license": "MIT"
+    "license": "MIT",
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.6"
+    }
 }
