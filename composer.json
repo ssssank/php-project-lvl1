@@ -2,7 +2,8 @@
     "name": "hexlet/code",
     "autoload": {
         "files": [
-            "src/Cli.php"
+            "src/Cli.php",
+            "src/Main.php"
         ]
     },
     "authors": [
@@ -15,7 +16,8 @@
         "wp-cli/php-cli-tools": "^0.11.13"
     },
     "bin": [
-        "bin/brain-games"
+        "bin/brain-games",
+        "bin/brain-even"
     ],
     "description": "Hexlet Project lvl1: Brain Games",
     "license": "MIT",
