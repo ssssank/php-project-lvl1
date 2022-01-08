@@ -17,7 +17,8 @@
     },
     "bin": [
         "bin/brain-games",
-        "bin/brain-even"
+        "bin/brain-even",
+        "bin/brain-calc"
     ],
     "description": "Hexlet Project lvl1: Brain Games",
     "license": "MIT",
