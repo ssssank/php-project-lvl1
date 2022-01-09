@@ -34,6 +34,6 @@ function runGame($rule, $dataForGames)
     }
 
     if ($rightAnswerCounter === WIN_ANSWERS_NUMBER) {
-        line("Congratulations, $userName");
+        line("Congratulations, %s!", $userName);
     }
 }
