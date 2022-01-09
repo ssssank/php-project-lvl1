@@ -24,7 +24,10 @@
     "bin": [
         "bin/brain-games",
         "bin/brain-even",
-        "bin/brain-calc"
+        "bin/brain-calc",
+        "bin/brain-gcd",
+        "bin/brain-progression",
+        "bin/brain-prime"
     ],
     "description": "Hexlet Project lvl1: Brain Games",
     "license": "MIT",
