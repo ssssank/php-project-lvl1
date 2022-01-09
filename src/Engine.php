@@ -8,7 +8,7 @@ use function cli\out;
 
 const WIN_ANSWERS_NUMBER = 3;
 
-function runGame($rule, $dataForGames)
+function runGame(string $rule, array $dataForGames)
 {
     $rightAnswerCounter = 0;
 

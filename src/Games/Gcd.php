@@ -8,7 +8,7 @@ use function Brain\Utils\getRandomInt;
 
 const RULE = 'Find the greatest common divisor of given numbers.';
 
-function gcd($first, $second)
+function gcd(int $first, int $second)
 {
     return $second > 0 ? gcd($second, $first % $second) : $first;
 }
@@ -20,7 +20,7 @@ function prepareRound()
     $question = "$first $second";
     $rightAnswer = gcd($first, $second);
     return [
-        'question' => (string) $question,
+        'question' => $question,
         'answer' => (string) $rightAnswer
     ];
 }

@@ -8,12 +8,12 @@ use function Brain\Utils\getRandomInt;
 
 const RULE = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-function isEven($number)
+function isEven(int $number)
 {
     return $number % 2 === 0;
 }
 
-function getRightAnswer($question)
+function getRightAnswer(int $question)
 {
     return isEven($question) ? 'yes' : 'no';
 }

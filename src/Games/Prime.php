@@ -8,7 +8,7 @@ use function Brain\Utils\getRandomInt;
 
 const RULE = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-function isPrime($number)
+function isPrime(int $number)
 {
     if ($number < 2) {
         return false;
@@ -20,7 +20,8 @@ function isPrime($number)
     }
     return true;
 }
-function getRightAnswer($question)
+
+function getRightAnswer(int $question)
 {
     return isPrime($question) ? 'yes' : 'no';
 }

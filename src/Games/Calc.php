@@ -11,7 +11,7 @@ const OPERATORS = ['+', '-', '*'];
 const MAX_NUMBER_DEFAULT = 50;
 const MAX_NUMBER_FOR_MULTIPLY = 11;
 
-function getRightAnswer($firstNumber, $operator, $secondNumber)
+function getRightAnswer(int $firstNumber, string $operator, int $secondNumber)
 {
     switch ($operator) {
         case ('+'):
@@ -38,7 +38,7 @@ function prepareRound()
     $question = "$firstNumber $operator $secondNumber";
     $rightAnswer = getRightAnswer($firstNumber, $operator, $secondNumber);
     return [
-        'question' => (string) $question,
+        'question' => $question,
         'answer' => (string) $rightAnswer
     ];
 }
