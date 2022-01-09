@@ -4,6 +4,7 @@ namespace Brain\Engine;
 
 use function cli\line;
 use function cli\prompt;
+use function cli\out;
 
 const WIN_ANSWERS_NUMBER = 3;
 
@@ -27,8 +28,9 @@ function runGame($rule, $dataForGames)
             line("Correct!");
             $rightAnswerCounter += 1;
         } else {
-            line("$userAnswer is wrong answer ;(. Correct answer was $rightAnswer.");
-            line("Let's try again,  $userName!");
+            out("'%s' is wrong answer ;(. ", $userAnswer);
+            line("Correct answer was '%s'.", $rightAnswer);
+            line("Let's try again, %s!", $userName);
             break;
         }
     }
