@@ -3,7 +3,11 @@
     "autoload": {
         "files": [
             "src/Cli.php",
-            "src/Main.php"
+            "src/Engine.php",
+            "src/Utils.php",
+            "src/Games/Even.php",
+            "src/Games/Calc.php",
+            "src/Games/Gcd.php"
         ]
     },
     "authors": [

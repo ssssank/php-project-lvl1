@@ -10,4 +10,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-Brain\Games\Even\startGame();
+Brain\Games\Gcd\startGame();
