@@ -7,6 +7,7 @@ use Exception;
 
 use function Brain\Utils\getRandomInt;
 use function Brain\Engine\runGame;
+
 use const Brain\Engine\WIN_ANSWERS_NUMBER;
 
 const RULE = 'What is the result of the expression?';
