@@ -8,6 +8,7 @@ use function Brain\Utils\getRandomInt;
 
 const RULE = 'What number is missing in the progression?';
 const PROGRESSION_LENGTH = 10;
+const MAX_NUMBER = 10;
 
 function getProgression(int $length, int $start, int $step)
 {
@@ -21,9 +22,9 @@ function getProgression(int $length, int $start, int $step)
 function prepareRound()
 {
     $progressionStart = getRandomInt();
-    $progressionStep = getRandomInt();
+    $progressionStep = getRandomInt(0, MAX_NUMBER);
     $progression = getProgression(PROGRESSION_LENGTH, $progressionStart, $progressionStep);
-    $randomIndex = getRandomInt(0, PROGRESSION_LENGTH);
+    $randomIndex = getRandomInt(0, PROGRESSION_LENGTH - 1);
     $rightAnswer = $progression[$randomIndex];
     $progression[$randomIndex] = '..';
     $question = implode(' ', $progression);
