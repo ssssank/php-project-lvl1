@@ -3,13 +3,15 @@
 namespace Brain\Games\Calc;
 
 use Brain\Engine;
+use Exception;
 
 use function Brain\Utils\getRandomInt;
+use function Brain\Engine\runGame;
+use const Brain\Engine\WIN_ANSWERS_NUMBER;
 
 const RULE = 'What is the result of the expression?';
 const OPERATORS = ['+', '-', '*'];
-const MAX_NUMBER_DEFAULT = 50;
-const MAX_NUMBER_FOR_MULTIPLY = 11;
+const MAX_NUMBER = 10;
 
 function getRightAnswer(int $firstNumber, string $operator, int $secondNumber)
 {
@@ -18,12 +20,14 @@ function getRightAnswer(int $firstNumber, string $operator, int $secondNumber)
             return $firstNumber + $secondNumber;
         case ('-'):
             return $firstNumber - $secondNumber;
-        default:
+        case ('*'):
             return $firstNumber * $secondNumber;
+        default:
+            throw new Exception("oops, uknown operation {$operator}");
     }
 }
 
-function getRandomOper()
+function getRandomOperator()
 {
     return OPERATORS[getRandomInt(0, count(OPERATORS) - 1)];
 }
@@ -31,10 +35,9 @@ function getRandomOper()
 function prepareRound()
 {
 
-    $operator = getRandomOper();
-    $maxNumberForGeneration = $operator === '*' ? MAX_NUMBER_FOR_MULTIPLY : MAX_NUMBER_DEFAULT;
-    $firstNumber = getRandomInt(0, $maxNumberForGeneration);
-    $secondNumber = getRandomInt(0, $maxNumberForGeneration);
+    $operator = getRandomOperator();
+    $firstNumber = getRandomInt(0, MAX_NUMBER);
+    $secondNumber = getRandomInt(0, MAX_NUMBER);
     $question = "$firstNumber $operator $secondNumber";
     $rightAnswer = getRightAnswer($firstNumber, $operator, $secondNumber);
     return [
@@ -46,8 +49,8 @@ function prepareRound()
 function startGame()
 {
     $dataForGames = [];
-    for ($i = 0; $i < Engine\WIN_ANSWERS_NUMBER; $i += 1) {
+    for ($i = 0; $i < WIN_ANSWERS_NUMBER; $i += 1) {
         $dataForGames[] = prepareRound();
     }
-    return Engine\runGame(RULE, $dataForGames);
+    return runGame(RULE, $dataForGames);
 }
