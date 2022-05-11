@@ -13,7 +13,7 @@ Collection of mini games for the console. To win you need to answer three times 
 
 ## Installation:
 ```bash
-git clone alegit@github.com:ssssank/php-project-lvl1.git
+git clone git@github.com:ssssank/php-project-lvl1.git
 
 make install
 ```

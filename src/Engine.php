@@ -20,15 +20,18 @@ function runGame(string $rule, array $rounds)
         $questionWithAnswer = $rounds[$i];
         $currentQuestion = $questionWithAnswer['question'];
         $rightAnswer = $questionWithAnswer['answer'];
+
         line("Question: $currentQuestion");
+
         $userAnswer = prompt("Your answer");
+
         if ($userAnswer === $rightAnswer) {
             line("Correct!");
         } else {
             out("'%s' is wrong answer ;(. ", $userAnswer);
             line("Correct answer was '%s'.", $rightAnswer);
             line("Let's try again, %s!", $userName);
-            return null;
+            return;
         }
     }
 

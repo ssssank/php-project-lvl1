@@ -30,6 +30,7 @@ function prepareRound()
 {
     $question = getRandomInt();
     $rightAnswer = getRightAnswer($question);
+
     return [
         'question' => (string) $question,
         'answer' => $rightAnswer
@@ -39,9 +40,9 @@ function prepareRound()
 
 function startGame()
 {
-    $dataForGames = [];
+    $rounds = [];
     for ($i = 0; $i < Engine\WIN_ANSWERS_NUMBER; $i += 1) {
-        $dataForGames[] = prepareRound();
+        $rounds[] = prepareRound();
     }
-    return Engine\runGame(RULE, $dataForGames);
+    return Engine\runGame(RULE, $rounds);
 }

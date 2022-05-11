@@ -2,7 +2,6 @@
 
 namespace Brain\Games\Calc;
 
-use Brain\Engine;
 use Exception;
 
 use function Brain\Utils\getRandomInt;
@@ -24,7 +23,7 @@ function getRightAnswer(int $firstNumber, string $operator, int $secondNumber)
         case ('*'):
             return $firstNumber * $secondNumber;
         default:
-            throw new Exception("oops, uknown operation {$operator}");
+            throw new Exception("oops, unknown operation {$operator}");
     }
 }
 
@@ -35,12 +34,13 @@ function getRandomOperator()
 
 function prepareRound()
 {
-
     $operator = getRandomOperator();
     $firstNumber = getRandomInt(0, MAX_NUMBER);
     $secondNumber = getRandomInt(0, MAX_NUMBER);
+
     $question = "$firstNumber $operator $secondNumber";
     $rightAnswer = getRightAnswer($firstNumber, $operator, $secondNumber);
+
     return [
         'question' => $question,
         'answer' => (string) $rightAnswer
@@ -49,9 +49,9 @@ function prepareRound()
 
 function startGame()
 {
-    $dataForGames = [];
+    $rounds = [];
     for ($i = 0; $i < WIN_ANSWERS_NUMBER; $i += 1) {
-        $dataForGames[] = prepareRound();
+        $rounds[] = prepareRound();
     }
-    return runGame(RULE, $dataForGames);
+    return runGame(RULE, $rounds);
 }

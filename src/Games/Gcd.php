@@ -17,8 +17,10 @@ function prepareRound()
 {
     $first = getRandomInt();
     $second = getRandomInt();
+
     $question = "$first $second";
     $rightAnswer = gcd($first, $second);
+
     return [
         'question' => $question,
         'answer' => (string) $rightAnswer
@@ -27,9 +29,9 @@ function prepareRound()
 
 function startGame()
 {
-    $dataForGames = [];
+    $rounds = [];
     for ($i = 0; $i < Engine\WIN_ANSWERS_NUMBER; $i += 1) {
-        $dataForGames[] = prepareRound();
+        $rounds[] = prepareRound();
     }
-    return Engine\runGame(RULE, $dataForGames);
+    return Engine\runGame(RULE, $rounds);
 }
